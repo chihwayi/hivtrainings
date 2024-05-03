@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <changeSet id="70279213Y38-2" author="devoop"
+               failOnError="true">
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/designation.csv" separator=";"
+                  tableName="designation" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/district.csv" separator=";"
+                  tableName="district" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/facility.csv" separator=";"
+                  tableName="facility" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/funding.csv" separator=";"
+                  tableName="funding" schemaName="hivtrainers" />
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/province.csv" separator=";"
+                  tableName="province" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/program_area.csv" separator=";"
+                  tableName="program_area" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/program_area_training.csv" separator=";"
+                  tableName="program_area_training" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/title.csv" separator=";"
+                  tableName="title" schemaName="hivtrainers" />
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/training_method.csv" separator=";"
+                  tableName="training_method" schemaName="hivtrainers" />
+
+        <loadData encoding="UTF-8"
+                  file="db/changelog/schema/data/training_type.csv" separator=";"
+                  tableName="training_type" schemaName="hivtrainers" />
+
+
+    </changeSet>
+</databaseChangeLog>

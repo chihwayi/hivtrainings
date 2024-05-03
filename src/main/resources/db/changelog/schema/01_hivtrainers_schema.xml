@@ -1,0 +1,279 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+    <changeSet author="devoop" id="70279213Y38-1" failOnError="true">
+        <sql>
+            CREATE DATABASE IF NOT EXISTS hivtrainers
+        </sql>
+
+        <createTable schemaName="hivtrainers" tableName="areas_of_service_provision">
+            <column name="areas_of_service_provision_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="basic_information_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="service_area" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="trainer" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable schemaName="hivtrainers" tableName="basic_information">
+            <column name="basic_information_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="designation_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="district_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="facility_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="province_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="sex" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="surname" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="phone_number" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="title_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="district">
+            <column name="district_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="district_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="province_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable schemaName="hivtrainers" tableName="designation">
+            <column name="designation_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="designation" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="title_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="facilitator">
+            <column name="facilitator_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="basic_information_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date_trained" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="program_area_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="trainer_affiliation_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="trainer_type_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable schemaName="hivtrainers" tableName="facility">
+            <column name="facility_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="district_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="facility_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="province_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dhis_code" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="longitude" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="latitude" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="funding">
+            <column name="funder_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="funder_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="program_area">
+            <column name="program_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="program_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="program_area_training">
+            <column name="program_area_training_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="program_area_training_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="program_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="province">
+            <column name="province_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="province_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="remarks">
+            <column name="remarks_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="remarks_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="remarks_comments">
+            <column name="remarks_comments_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="basic_information_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="comments" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="remarks" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="supporting_organization">
+            <column name="organization_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="organization_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="title">
+            <column name="title_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="training_data">
+            <column name="training_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="basic_information_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="comments" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="end_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="facilitator_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="funder_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="method_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="number_of_days" type="int(11)">
+                <constraints nullable="false" />
+            </column>
+            <column name="program_area_training_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="program_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="remarks" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="start_date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="certified_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="type_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <createTable schemaName="hivtrainers" tableName="training_location">
+            <column name="location_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="district_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="location_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="province_id" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="training_method">
+            <column name="method_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="method_name" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <createTable schemaName="hivtrainers" tableName="training_type">
+            <column name="type_id" type="VARCHAR(255)">
+                <constraints  primaryKey="true"  nullable="false"/>
+            </column>
+            <column name="type_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
