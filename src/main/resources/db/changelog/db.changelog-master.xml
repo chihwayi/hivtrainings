@@ -24,4 +24,7 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     <include
             file="db/changelog/schema/03_hivtrainers_schema.xml"
             relativeToChangelogFile="false"/>
+    <include
+            file="db/changelog/schema/04_hivtrainers_schema.xml"
+            relativeToChangelogFile="false"/>
 </databaseChangeLog>
