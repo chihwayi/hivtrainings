@@ -13,6 +13,6 @@ public interface FacilityDistrictProvinceRepository extends JpaRepository<Facili
     @Query("SELECT new FacilityDistrictProvince(a.facilityId, a.districtId, a.provinceId, a.facilityName, b.districtName, c.provinceName) " +
             "FROM Facility a " +
             "JOIN District b ON a.districtId = b.districtId AND a.provinceId = b.provinceId " +
-            "JOIN Province c ON b.provinceId = c.provinceId")
+            "JOIN Province c ON a.provinceId = c.provinceId")
     List<FacilityDistrictProvince> getFacilityDistrictProvinceData();
 }
