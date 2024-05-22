@@ -9,7 +9,9 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <changeSet author="devoop" id="70279213Y38-6" failOnError="true">
-        <sql>ALTER TABLE hivtrainers.training_data MODIFY COLUMN facilitator_id varchar(255) DEFAULT NULL</sql>
-        <sql>ALTER TABLE hivtrainers.training_data MODIFY COLUMN method_id varchar(255) DEFAULT NULL</sql>
+        <sql>
+            ALTER TABLE hivtrainers.training_data MODIFY COLUMN facilitator_id varchar(255) DEFAULT NULL;
+            ALTER TABLE hivtrainers.training_data MODIFY COLUMN method_id varchar(255) DEFAULT NULL;
+        </sql>
     </changeSet>
 </databaseChangeLog>
